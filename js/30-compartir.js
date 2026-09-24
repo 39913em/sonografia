@@ -41,10 +41,10 @@
 
   wire('shareTwitter', () => abrirIntent(`https://twitter.com/intent/tweet?text=${caption}`));
   wire('shareBluesky', () => abrirIntent(`https://bsky.app/intent/compose?text=${caption}`));
-  wire('shareLinkedin', () => abrirIntent(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://TU-USUARIO.github.io/TU-REPOSITORIO/')}&summary=${caption}`));
-  wire('shareFacebook', () => abrirIntent(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://TU-USUARIO.github.io/TU-REPOSITORIO/')}&quote=${caption}`));
+  wire('shareLinkedin', () => abrirIntent(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://39913em.github.io/sonografia/')}&summary=${caption}`));
+  wire('shareFacebook', () => abrirIntent(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://39913em.github.io/sonografia/')}&quote=${caption}`));
   wire('shareWhatsapp', () => abrirIntent(`https://wa.me/?text=${caption}`));
-  wire('shareReddit', () => abrirIntent(`https://www.reddit.com/submit?url=${encodeURIComponent('https://TU-USUARIO.github.io/TU-REPOSITORIO/')}&title=${caption}`));
+  wire('shareReddit', () => abrirIntent(`https://www.reddit.com/submit?url=${encodeURIComponent('https://39913em.github.io/sonografia/')}&title=${caption}`));
   wire('shareThreads', () => abrirIntent(`https://www.threads.net/intent/post?text=${caption}`));
 
  
