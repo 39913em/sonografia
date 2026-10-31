@@ -6,7 +6,7 @@ function crearCanvasPNG(){
   const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
   const ctx=canvas.getContext('2d');
   ctx.imageSmoothingEnabled=false;
-  ctx.fillStyle='#0d0d16';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#000000';ctx.fillRect(0,0,W,H);
   pintarPatronPuntos(ctx, W, H, 0.018, 10, 0.5);
   ctx.strokeStyle='#cc2233';ctx.lineWidth=4;ctx.strokeRect(2,2,W-4,H-4);
   ctx.fillStyle='#cc2233';ctx.fillRect(4,4,W-8,HEADER_H-4);
@@ -16,7 +16,7 @@ function crearCanvasPNG(){
   const isoCy = 4 + (HEADER_H-4)/2;
   drawIsoOnCanvas(ctx, isoCx, isoCy, isoDiam);
 
-  ctx.fillStyle='#0a0a0f';
+  ctx.fillStyle='#000000';
   ctx.textBaseline='middle';
   const textoX = PAD + isoDiam + 14;
   ctx.font='bold 20px "IBM Plex Mono",monospace';
@@ -35,7 +35,7 @@ function crearCanvasPNG(){
   srcCanvas.getContext('2d').putImageData(new ImageData(new Uint8ClampedArray(lastBentData.data),256,256),0,0);
   ctx.drawImage(srcCanvas, PAD, HEADER_H, IMG_SIZE, IMG_SIZE);
 
-  ctx.strokeStyle='#2a2a3f';ctx.lineWidth=1;ctx.beginPath();
+  ctx.strokeStyle='#303030';ctx.lineWidth=1;ctx.beginPath();
   ctx.moveTo(PAD,HEADER_H+IMG_SIZE+16);
   ctx.lineTo(W-PAD,HEADER_H+IMG_SIZE+16);
   ctx.stroke();
@@ -53,22 +53,22 @@ function crearCanvasPNG(){
   const sw=ctx.measureText(brand).width;
 
   drawIsoOnCanvas(ctx, fTextoX + sw + 12, fy, 12);
-  ctx.fillStyle='#9a9aa8';ctx.font='12px "IBM Plex Mono",monospace';
+  ctx.fillStyle='#aaaaaa';ctx.font='12px "IBM Plex Mono",monospace';
   ctx.fillText('SONOGRAFÍA · ERRORES VISIONOROS · By: 39913', fTextoX + sw + 24, fy);
   fy += 22;
 
   const _ee = etiquetaEstado();
-  ctx.fillStyle='#e8e6f0';ctx.font='12px "IBM Plex Mono",monospace';
+  ctx.fillStyle='#ffffff';ctx.font='12px "IBM Plex Mono",monospace';
   ctx.fillText(`${_ee.textura} · ${_ee.modo} · ${_ee.bpm} BPM · ${_ee.dur}s · CLAVE ${_ee.clef} · TOMA ${_ee.toma === 'vivo' ? 'VIVA' : '1:1'}`, fTextoX, fy);fy+=18;
-  ctx.fillStyle='#9a9aa8';ctx.font='11px "IBM Plex Mono",monospace';
+  ctx.fillStyle='#aaaaaa';ctx.font='11px "IBM Plex Mono",monospace';
   ctx.fillText(`${_ee.escala} · ${_ee.synth} · BANDAS ${_ee.bands} · SEED ${_ee.seed} · ${_ee.notas}N/${_ee.silencios}S${_ee.partial?` · EXPORT ${_ee.rangeA}-${_ee.rangeB}s`:''}`, fTextoX, fy);fy+=18;
-  ctx.fillStyle='#6a6a80';ctx.font='10px "IBM Plex Mono",monospace';
+  ctx.fillStyle='#777777';ctx.font='10px "IBM Plex Mono",monospace';
   ctx.fillText('SONOGRAFÍA · ERRORES VISIONOROS · By: 39913 · Databending · 2017-2026', fTextoX, fy);
 
   ctx.textAlign='right';
   ctx.fillStyle='#cc2233';ctx.font='bold 12px "IBM Plex Mono",monospace';
   ctx.fillText(fechaCreacion(), W-PAD, fy);
-  ctx.fillStyle='#6a6a80';ctx.font='10px "IBM Plex Mono",monospace';
+  ctx.fillStyle='#777777';ctx.font='10px "IBM Plex Mono",monospace';
   ctx.fillText('"El error como materialidad"', W-PAD, fy-18);
   ctx.textAlign='left';
 

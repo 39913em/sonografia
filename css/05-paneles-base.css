@@ -1,5 +1,5 @@
 
-.block{background:#0d0d16;border:2px solid #2a2a3f;padding:12px 14px;box-shadow:3px 3px 0 rgba(0,0,0,0.6);position:relative;overflow:hidden}
+.block{background:#000000;border:2px solid #303030;padding:12px 14px;box-shadow:3px 3px 0 rgba(0,0,0,0.6);position:relative;overflow:hidden}
 .block::after{
   content:"";
   position:absolute;inset:0;pointer-events:none;
@@ -13,6 +13,6 @@
 }
 .block > *{position:relative;z-index:1}
 
-.titulo{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:#9a9aa8;border-bottom:2px solid #1a3a8a;padding-bottom:5px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.titulo{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:#aaaaaa;border-bottom:2px solid #cc2233;padding-bottom:5px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .titulo .tit-left{display:flex;align-items:center;gap:8px}
-.num{background:#cc2233;color:#0a0a0f;padding:0 8px;font-weight:700;font-size:11px;letter-spacing:0.5px}
+.num{background:#cc2233;color:#ffffff;padding:0 8px;font-weight:700;font-size:11px;letter-spacing:0.5px}

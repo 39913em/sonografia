@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon-192.png">
-<meta name="theme-color" content="#0a0a0f">
+<meta name="theme-color" content="#000000">
 
 
 <meta property="og:type" content="website">
@@ -53,7 +53,7 @@
 <link rel="stylesheet" href="css/13-secciones-colapsables.css">
 <link rel="stylesheet" href="css/14-selector-toma.css">
 
-<link rel="stylesheet" href="css/16-compartir.css">
+<link rel="stylesheet" href="css/16-compartir.css">\n<link rel="stylesheet" href="css/19-modal-informacion.css">\n<link rel="stylesheet" href="css/19-modal-informacion.css">
 <link rel="stylesheet" href="css/17-breakpoints-adicionales.css">
 <link rel="manifest" href="./manifest.json">
 </head>
@@ -66,7 +66,7 @@
   <defs>
     <symbol id="iso-02" viewBox="0 0 40 40">
       <circle cx="20" cy="20" r="10" fill="#cc2233"/>
-      <g fill="#e8e9e8">
+      <g fill="#ffffff">
         <circle cx="20" cy="14.4" r="0.7"/>
         <circle cx="20" cy="17.2" r="0.7"/>
         <circle cx="20" cy="20" r="0.7"/>
@@ -110,7 +110,7 @@
       <span style="font-size:8.5px"></span>
     </span>
     
-    <span class="badge rojo" id="btn-instrucciones" style="background:#1A3A8A;color:#E8E6F0;cursor:pointer"><span class="dot-ico" style="background:#E8E6F0"></span>INSTRUCCIONES</span>
+    <span class="badge rojo" id="btn-instrucciones" style="background:#CC2233;color:#FFFFFF;cursor:pointer"><span class="dot-ico" style="background:#FFFFFF"></span>INSTRUCCIONES</span>
     <button id="compactBtn" class="compact-btn" title="Colapsar / expandir todas las secciones">⊟ COMPACTO</button>
   </div>
 </header>
@@ -122,7 +122,7 @@
         <span class="ico ico-lg">⌜</span>
         <span class="num">01</span> FUENTE
       </span>
-      <span style="font-size:8.5px;color:#6a6a80" id="durBadge2">30s</span>
+      <span style="font-size:8.5px;color:#777777" id="durBadge2">30s</span>
     </div>
     <div id="emptyState">
       <div class="upload" id="dropZone">
@@ -167,7 +167,7 @@
           <canvas id="cBent" class="pixel" width="256" height="256" role="img" aria-label="Bitmap resultante del databending, con la textura de corrupción aplicada"></canvas>
         </div>
       </div>
-      <div style="display:flex;justify-content:space-between;font-size:8px;color:#6a6a80;margin-top:2px">
+      <div style="display:flex;justify-content:space-between;font-size:8px;color:#777777;margin-top:2px">
         <span>ORIGINAL</span><span>BENT · CLICK PARA ZOOM</span>
       </div>
       <canvas id="cWave" class="wave" width="800" height="36" style="margin-top:6px" role="img" aria-label="Forma de onda del audio generado a partir de la imagen"></canvas>
@@ -325,9 +325,9 @@
     <button id="stopMelody" class="btn-stop" style="font-size:9px;padding:4px 10px">■ STOP</button>
     <span class="ctl-label" style="margin-left:6px">Rango</span>
     <input type="number" id="rangeStart" value="0" min="0" max="30" step="1" style="width:46px">
-    <span style="color:#6a6a80;font-size:10px">–</span>
+    <span style="color:#777777;font-size:10px">–</span>
     <input type="number" id="rangeEnd" value="30" min="0" max="30" step="1" style="width:46px">
-    <span style="color:#6a6a80;font-size:9px">s</span>
+    <span style="color:#777777;font-size:9px">s</span>
   </div>
 
   <div class="toma-row">
@@ -366,13 +366,36 @@
 
 <div class="site-extra">
   <nav class="footer-nav" aria-label="Navegación institucional y redes">
-    <a href="about.html">Acerca de ·</a>
-    <a href="privacidad.html">Política de privacidad ·</a>
-    <a href="terminos.html">Términos y condiciones ·</a>
+    <a href="about.html" data-info-page="about">Acerca de ·</a>
+    <a href="privacidad.html" data-info-page="privacy">Política de privacidad ·</a>
+    <a href="terminos.html" data-info-page="terms">Términos y condiciones ·</a>
     <a href="https://instagram.com/39913em" target="_blank" rel="noopener noreferrer">Instagram ·</a>
     <a href="https://39913em.github.io/archivo-de-senal" target="_blank" rel="noopener noreferrer">Archivo de Señal</a>
   </nav>
 </div>
+</div>
+
+<div class="info-overlay" id="infoOverlay" aria-hidden="true">
+  <section class="info-window" role="dialog" aria-modal="true" aria-labelledby="infoWindowTitle">
+    <header class="info-window-head">
+      <div class="info-window-brand">
+        <span class="info-window-mark">●</span>
+        <div>
+          <div class="info-window-title" id="infoWindowTitle">SONOGRAFÍA</div>
+          <div class="info-window-subtitle">INFORMACIÓN DEL PROYECTO</div>
+        </div>
+      </div>
+      <button type="button" class="info-window-close" id="infoWindowClose" aria-label="Cerrar">✕</button>
+    </header>
+    <nav class="info-tabs" aria-label="Secciones de información">
+      <button type="button" data-info-tab="about" class="active">ACERCA DE</button>
+      <button type="button" data-info-tab="terms">TÉRMINOS Y CONDICIONES</button>
+      <button type="button" data-info-tab="privacy">POLÍTICAS DE PRIVACIDAD</button>
+    </nav>
+    <div class="info-window-content">
+      <iframe id="infoFrame" title="Información de Sonografía" src="about.html"></iframe>
+    </div>
+  </section>
 </div>
 
 <div class="modal-overlay" id="modalBent">
@@ -461,8 +484,8 @@
 <script src="js/30-compartir.js"></script>
 
 <script>if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(r=>r.forEach(x=>x.unregister()))}</script>
-<div id="overlay-manual" style="position:fixed;inset:0;display:none !important;place-items:center;background:rgba(5,5,9,0.85);backdrop-filter:blur(6px);z-index:9999;padding:20px">
-  <iframe src="./manual.html?v=3" style="width:440px;max-width:92vw;height:620px;border:3px solid #CC2233;box-shadow:6px 6px 0 rgba(204,34,51,0.3);background:#0D0D16"></iframe>
+<div id="overlay-manual" style="position:fixed;inset:0;display:none !important;place-items:center;background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);z-index:9999;padding:20px">
+  <iframe src="./manual.html?v=3" style="width:440px;max-width:92vw;height:620px;border:3px solid #CC2233;box-shadow:6px 6px 0 rgba(204,34,51,0.3);background:#000000"></iframe>
 </div>
 <script>
 (function(){
@@ -491,5 +514,6 @@
   window.addEventListener('message', function(e){ if(e.data==='closeManual') cerrarManual(); });
 })();
 </script>
-</body>
+<script src="js/31-modal-informacion.js"></script>
+<script src="js/31-modal-informacion.js"></script>\n</body>
 </html>

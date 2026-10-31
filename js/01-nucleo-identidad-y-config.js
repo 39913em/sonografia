@@ -32,7 +32,7 @@ function drawIsoOnCanvas(ctx, cx, cy, size){
   ctx.beginPath();
   ctx.arc(cx, cy, r, 0, Math.PI*2);
   ctx.fill();
-  ctx.fillStyle = '#e8e9e8';
+  ctx.fillStyle = '#ffffff';
   const dots = [
     [20,14.4],[20,17.2],[20,20],[20,22.8],[20,25.6],
     [17,17.2],[17,20],[17,22.8],

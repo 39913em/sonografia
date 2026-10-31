@@ -37,7 +37,7 @@ function crearPreviewMarcaWAV(subtitulo, metaLineas, audioEl){
   head.style.cssText = 'display:flex;justify-content:center;margin-top:10px';
   wrap.appendChild(head);
   const line = document.createElement('div');
-  line.style.cssText = 'font-size:11px;letter-spacing:3px;color:#9a9aa8;text-transform:uppercase;text-align:center;line-height:1.8';
+  line.style.cssText = 'font-size:11px;letter-spacing:3px;color:#aaaaaa;text-transform:uppercase;text-align:center;line-height:1.8';
   line.innerHTML = subtitulo;
   wrap.appendChild(line);
   const body = document.createElement('div');
@@ -59,7 +59,7 @@ function crearPreviewMarcaMIDI(contenidoBox, metaLineas){
   head.style.cssText = 'display:flex;justify-content:center;margin-top:10px';
   wrap.appendChild(head);
   const line = document.createElement('div');
-  line.style.cssText = 'font-size:11px;letter-spacing:3px;color:#9a9aa8;text-transform:uppercase;text-align:center;line-height:1.8';
+  line.style.cssText = 'font-size:11px;letter-spacing:3px;color:#aaaaaa;text-transform:uppercase;text-align:center;line-height:1.8';
   line.innerHTML = 'ARCHIVO MIDI · 3 PISTAS';
   wrap.appendChild(line);
   const body = document.createElement('div');

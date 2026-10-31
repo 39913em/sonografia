@@ -62,7 +62,7 @@ function ensurePlayheadInSVG(){
     g.setAttribute('pointer-events', 'none');
     const line = document.createElementNS(NS, 'line');
     line.setAttribute('id', 'playhead-line-svg');
-    line.setAttribute('stroke', '#ff2050');
+    line.setAttribute('stroke', '#cc2233');
     line.setAttribute('stroke-width', '2');
     line.setAttribute('vector-effect', 'non-scaling-stroke');
     line.style.display = 'none';
@@ -70,7 +70,7 @@ function ensurePlayheadInSVG(){
     const rect = document.createElementNS(NS, 'rect');
     rect.setAttribute('id', 'playhead-rect-svg');
     rect.setAttribute('fill', 'rgba(255,32,80,0.18)');
-    rect.setAttribute('stroke', '#ff2050');
+    rect.setAttribute('stroke', '#cc2233');
     rect.setAttribute('stroke-width', '2');
     rect.setAttribute('rx', '4');
     rect.setAttribute('ry', '4');

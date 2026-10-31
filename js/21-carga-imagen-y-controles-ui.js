@@ -20,8 +20,8 @@ function cargarImagen(file){
 fileInput.onchange=e=>{if(e.target.files.length)cargarImagen(e.target.files[0])};
 fileChange.onchange=e=>{if(e.target.files.length)cargarImagen(e.target.files[0])};
 dropZone.ondragover=e=>{e.preventDefault();dropZone.style.borderColor='#cc2233'};
-dropZone.ondragleave=()=>{dropZone.style.borderColor='#2a2a3f'};
-dropZone.ondrop=e=>{e.preventDefault();dropZone.style.borderColor='#2a2a3f';if(e.dataTransfer.files.length)cargarImagen(e.dataTransfer.files[0])};
+dropZone.ondragleave=()=>{dropZone.style.borderColor='#303030'};
+dropZone.ondrop=e=>{e.preventDefault();dropZone.style.borderColor='#303030';if(e.dataTransfer.files.length)cargarImagen(e.dataTransfer.files[0])};
 
 textura.onchange=()=>{
   if(!imageData)return;

@@ -3,12 +3,12 @@ import random
 from PIL import Image, ImageDraw, ImageFont
 
 RED = (204, 34, 51, 255)
-WHITE_DOT = (232, 233, 232, 255)
-BG = (10, 10, 15, 255)
-TEXT = (232, 230, 240, 255)
-MUTED = (154, 154, 168, 255)
-MUTED2 = (106, 106, 128, 255)
-BLUE = (26, 58, 138, 255)
+WHITE_DOT = (255, 255, 255, 255)
+BG = (0, 0, 0, 255)
+TEXT = (255, 255, 255, 255)
+MUTED = (170, 170, 170, 255)
+MUTED2 = (119, 119, 119, 255)
+RED = (204, 34, 51, 255)
 
 FONT_REG = "IBMPlexMono-Regular.ttf"
 FONT_BOLD = "IBMPlexMono-Bold.ttf"
@@ -116,7 +116,7 @@ def generar_og_image():
     tag_w = ttag[2] - ttag[0]
     tag_x = (W - tag_w) // 2
     tag_y = sub_y + 50
-    d.line([(W - 420) // 2, tag_y - 16, (W + 420) // 2, tag_y - 16], fill=BLUE, width=3)
+    d.line([(W - 420) // 2, tag_y - 16, (W + 420) // 2, tag_y - 16], fill=RED, width=3)
     d.text((tag_x, tag_y), tag_text, font=f_tag, fill=TEXT)
 
     meta_text = "SONOGRAFÍA · ERRORES VISIONOROS · By: 39913 · Databending · 2017-2026"

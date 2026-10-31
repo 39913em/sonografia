@@ -153,7 +153,7 @@ function renderPartitura(){
           svgEl.style.width='100%';
           svgEl.style.height='auto';
           svgEl.style.display='block';
-          svgEl.style.background='#fff';
+          svgEl.style.background='#000000';
           setTimeout(()=>{
             capturarPosicionesPartitura();
             updateScorePlayhead(playheadTime);

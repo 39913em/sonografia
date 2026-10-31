@@ -4,7 +4,7 @@
 .site-extra .footer-nav a:active,
 .site-extra .footer-nav a:focus,
 .site-extra .footer-nav a:focus-visible {
-  color: #e8e9e8 !important;
+  color: #ffffff !important;
   text-decoration: none;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .back-link {
-  color: #e8e9e8 !important;
+  color: #ffffff !important;
   text-decoration: none;
 }
 .back-link:hover {

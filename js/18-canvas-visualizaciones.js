@@ -12,7 +12,7 @@ function dibujarSpec(c,spec){
   const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);
   if(!spec)return;
   const max=Math.max(...spec,1e-9);
-  ctx.fillStyle='#1a3a8a';
+  ctx.fillStyle='#cc2233';
   for(let x=0;x<c.width;x++){
     const idx=Math.floor(x/c.width*spec.length);
     const h=(spec[idx]/max)*c.height;

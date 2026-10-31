@@ -20,7 +20,7 @@ function scoreSliceToPngDataURL(svgEl, vx, vy, vw, cropH, scale=4){
         canvas.width=Math.ceil(vw*scale);
         canvas.height=Math.ceil(cropH*scale);
         const c=canvas.getContext('2d');
-        c.fillStyle='#fff';c.fillRect(0,0,canvas.width,canvas.height);
+        c.fillStyle='#000';c.fillRect(0,0,canvas.width,canvas.height);
         c.drawImage(img,0,0,canvas.width,canvas.height);
         URL.revokeObjectURL(url);
         resolve(canvas.toDataURL('image/png'));
@@ -35,7 +35,7 @@ async function crearPDFBlob(){
   const{jsPDF}=window.jspdf;
   const doc=new jsPDF({unit:'mm',format:'a4'});
   const W=210,H=297;
-  const ROJO=[204,34,51],AZUL=[26,58,138],NEGRO=[10,10,15],BLANCO=[232,230,240],GRIS=[154,154,168];
+  const ROJO=[204,34,51],AZUL=[204,34,51],NEGRO=[0,0,0],BLANCO=[255,255,255],GRIS=[170,170,170];
   const r = getRango();
 
   doc.setFillColor(...NEGRO);doc.rect(0,0,W,H,'F');
@@ -126,25 +126,25 @@ async function crearPDFBlob(){
   }
   for(let pi=0; pi<pages.length; pi++){
     doc.addPage();
-    doc.setFillColor(255,255,255);doc.rect(0,0,W,H,'F');
-    doc.setDrawColor(42,42,63);doc.setLineWidth(0.7);doc.rect(7,7,W-14,H-14);
+    doc.setFillColor(...NEGRO);doc.rect(0,0,W,H,'F');
+    doc.setDrawColor(48,48,48);doc.setLineWidth(0.7);doc.rect(7,7,W-14,H-14);
     drawIsoOnPDF(doc, W-14, 15, 6);
     let top;
     if(pi===0){
-      doc.setFont('times','bold');doc.setTextColor(...NEGRO);doc.setFontSize(13);
+      doc.setFont('times','bold');doc.setTextColor(...BLANCO);doc.setFontSize(13);
       doc.text(`SONOGRAFÍA · ${ESCALAS[escalaActual].name.toUpperCase()}`,12,16);
-      doc.setFont('times','italic');doc.setFontSize(7.5);doc.setTextColor(80,80,80);
+      doc.setFont('times','italic');doc.setFontSize(7.5);doc.setTextColor(170,170,170);
       doc.text(leyendaEstado(' · '), 12, 21);
-      doc.setFont('times','normal');doc.setFontSize(8);doc.setTextColor(51,51,51);
+      doc.setFont('times','normal');doc.setFontSize(8);doc.setTextColor(...BLANCO);
       doc.text(`${lastSeqLen} notas · ♩ = ${bpmActual} · CLAVE ${clefActual==='bass'?'FA':'SOL'} · ${instrumento.value.toUpperCase()}`,12,25.5);
-      doc.setDrawColor(221,221,221);doc.setLineWidth(0.35);doc.line(12,28,W-12,28);
+      doc.setDrawColor(255,255,255);doc.setLineWidth(0.35);doc.line(12,28,W-12,28);
       top=32;
     } else {
-      doc.setFont('times','bold');doc.setTextColor(...NEGRO);doc.setFontSize(10);
+      doc.setFont('times','bold');doc.setTextColor(...BLANCO);doc.setFontSize(10);
       doc.text(`SONOGRAFÍA · ${ESCALAS[escalaActual].name.toUpperCase()} · cont.`,12,14);
-      doc.setFont('times','normal');doc.setFontSize(7);doc.setTextColor(120,120,120);
+      doc.setFont('times','normal');doc.setFontSize(7);doc.setTextColor(170,170,170);
       doc.text(`Clave ${clefActual==='bass'?'FA':'SOL'} · ♩ = ${bpmActual} · ${duracionAudio}s · seed ${rebentSeed} · ${instrumento.value.toUpperCase()} · BANDAS ${etiquetaEstado().bands}`,12,18.5);
-      doc.setDrawColor(221,221,221);doc.setLineWidth(0.35);doc.line(12,21,W-12,21);
+      doc.setDrawColor(255,255,255);doc.setLineWidth(0.35);doc.line(12,21,W-12,21);
       top=24;
     }
     const grp=pages[pi];
