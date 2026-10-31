@@ -36,7 +36,7 @@
     }
   });
 
-  
+  https://39913em.github.io/sonografia/
   const caption = encodeURIComponent(shareCaption());
 
   wire('shareTwitter', () => abrirIntent(`https://twitter.com/intent/tweet?text=${caption}`));
