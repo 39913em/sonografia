@@ -38,7 +38,11 @@ function dibujarEventos(currentTime){
     ctx.strokeStyle='#000000';ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();
     ctx.fillStyle='#303030';ctx.fillText(t+'s',x+2,9);
   }
-  const colors={bass:'#cc2233',mid:'#cc2233',high:'#cc2233'};
+  const colors={
+  bass:'#cc2233', // BAJO: rojo
+  mid:'#ffffff',  // MEDIO: blanco
+  high:'#aeb4bd'  // AGUDO: gris plateado
+};
   for(const e of eventosSecuencia){
     const x=(e.time/maxTime)*W;
     const y=H-((Math.log(Math.max(40,e.freq))-fMin)/(fMax-fMin))*H;
