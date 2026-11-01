@@ -20,7 +20,8 @@ function scoreSliceToPngDataURL(svgEl, vx, vy, vw, cropH, scale=4){
         canvas.width=Math.ceil(vw*scale);
         canvas.height=Math.ceil(cropH*scale);
         const c=canvas.getContext('2d');
-        c.fillStyle='#000';c.fillRect(0,0,canvas.width,canvas.height);
+        c.fillStyle='#ffffff';
+c.fillRect(0,0,canvas.width,canvas.height);
         c.drawImage(img,0,0,canvas.width,canvas.height);
         URL.revokeObjectURL(url);
         resolve(canvas.toDataURL('image/png'));
@@ -38,7 +39,8 @@ async function crearPDFBlob(){
   const ROJO=[204,34,51],AZUL=[204,34,51],NEGRO=[0,0,0],BLANCO=[255,255,255],GRIS=[170,170,170];
   const r = getRango();
 
-  doc.setFillColor(...NEGRO);doc.rect(0,0,W,H,'F');
+  doc.setFillColor(...BLANCO);
+doc.rect(0,0,W,H,'F');
 
   doc.setFillColor(...ROJO);doc.rect(0,0,W,24,'F');
 
@@ -77,13 +79,25 @@ async function crearPDFBlob(){
 
   let y=56;
   for(const [label,canvas,h] of [['FORMA DE ONDA',cWave,14],['ESPECTRO',cSpec,14]]){
-    doc.setTextColor(...BLANCO);doc.setFont('courier','bold');doc.setFontSize(9);doc.text('▸ '+label,10,y);y+=2;
+    doc.setTextColor(...NEGRO);
+doc.setFont('courier','bold');
+doc.setFontSize(9);
+doc.text('▸ '+label,10,y);
+y+=2;
     try{doc.addImage(canvas.toDataURL('image/png'),'PNG',10,y+2,W-20,h)}catch(e){}
     y+=20;
   }
   const tiempoMapa=playheadTime;
   dibujarEventos(0);
-  try{doc.setTextColor(...BLANCO);doc.setFont('courier','bold');doc.setFontSize(9);doc.text('▸ MAPA DE EVENTOS',10,y);y+=2;doc.addImage(cEvents.toDataURL('image/png'),'PNG',10,y+2,W-20,32);y+=38}catch(e){}
+  try{
+  doc.setTextColor(...NEGRO);
+  doc.setFont('courier','bold');
+  doc.setFontSize(9);
+  doc.text('▸ MAPA DE EVENTOS',10,y);
+  y+=2;
+  doc.addImage(cEvents.toDataURL('image/png'),'PNG',10,y+2,W-20,32);
+  y+=38;
+}catch(e){}
   dibujarEventos(tiempoMapa);
   doc.setFont('courier','bold');doc.setFontSize(9);doc.text('▸ EVENTOS DESTACADOS',10,y);y+=2;doc.setFont('courier','normal');doc.setFontSize(6.5);
   const evsEnRango = eventosSecuencia.filter(e=>e.time>=r.a && e.time<=r.b);
@@ -91,7 +105,8 @@ async function crearPDFBlob(){
   for(let i=0;i<evs.length;i++){
     const e=evs[i],yy=y+3+i*3.1;if(yy>H-30)break;
     doc.setTextColor(...ROJO);doc.text(String(i+1).padStart(2,'0'),10,yy);doc.setTextColor(...GRIS);doc.text(`[${e.band[0].toUpperCase()}]`,17,yy);doc.text(`${e.time.toFixed(2)}s`,24,yy);
-    doc.setTextColor(...BLANCO);doc.text(`${e.freq.toFixed(1).padStart(7,' ')}Hz`,42,yy);doc.setTextColor(...AZUL);doc.text(`→ ${e.nom||'—'}`,78,yy);
+    doc.setTextColor(...NEGRO);
+doc.text(`${e.freq.toFixed(1).padStart(7,' ')}Hz`,42,yy);doc.setTextColor(...AZUL);doc.text(`→ ${e.nom||'—'}`,78,yy);
   }
 
   doc.setFillColor(...ROJO);doc.rect(0,H-20,W,20,'F');
@@ -126,7 +141,8 @@ async function crearPDFBlob(){
   }
   for(let pi=0; pi<pages.length; pi++){
     doc.addPage();
-    doc.setFillColor(...NEGRO);doc.rect(0,0,W,H,'F');
+    doc.setFillColor(...BLANCO);
+doc.rect(0,0,W,H,'F');
     doc.setDrawColor(48,48,48);doc.setLineWidth(0.7);doc.rect(7,7,W-14,H-14);
     drawIsoOnPDF(doc, W-14, 15, 6);
     let top;

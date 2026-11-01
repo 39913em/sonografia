@@ -12,14 +12,58 @@
 .notas-box .load-more{width:100%;background:#000000;color:#cc2233;border:1px dashed #303030;padding:6px;font-family:inherit;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;margin-top:4px;transition:0.15s}
 .notas-box .load-more:hover{border-color:#cc2233;background:#000000}
 .notas-box .end-marker{color:#444;padding:6px;text-align:center;font-size:9px;letter-spacing:1px;text-transform:uppercase}
-.part-wrapper{background:#000000;border:2px solid #303030;padding:8px 10px}
-.part-header{border-bottom:1px solid #ddd;padding-bottom:4px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
-.part-title{color:#000000;font-family:'Times New Roman',serif;font-weight:bold;font-size:13px;line-height:1.1}
-.part-info{color:#333;font-family:'Times New Roman',serif;font-size:9px;letter-spacing:0.2px}
-.part-box{position:relative;background:#000000;min-height:170px;max-height:320px;overflow:auto;padding:0}
-.part-box svg{display:block;width:100%;height:auto;background:#000000}
-.part-box .empty{color:#666;font-style:italic;font-size:11px;padding:20px}
+.part-wrapper{
+  background:#ffffff;
+  border:2px solid #303030;
+  padding:8px 10px;
+}
 
-/* Partitura en la paleta monocroma del proyecto */
-.part-box svg{background:#000000!important}
-.part-box svg path,.part-box svg text,.part-box svg line,.part-box svg rect{stroke:#ffffff!important;fill:#ffffff!important}
+.part-header{
+  background:#ffffff;
+  border-bottom:1px solid #dddddd;
+  padding-bottom:4px;
+  margin-bottom:6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.part-title{
+  color:#000000;
+  font-family:'Times New Roman',serif;
+  font-weight:bold;
+  font-size:13px;
+  line-height:1.1;
+}
+
+.part-info{
+  color:#333333;
+  font-family:'Times New Roman',serif;
+  font-size:9px;
+  letter-spacing:0.2px;
+}
+
+.part-box{
+  position:relative;
+  background:#ffffff;
+  min-height:170px;
+  max-height:320px;
+  overflow:auto;
+  padding:0;
+}
+
+.part-box svg{
+  display:block;
+  width:100%;
+  height:auto;
+  background:#ffffff !important;
+}
+
+.part-box .empty{
+  color:#666666;
+  font-style:italic;
+  font-size:11px;
+  padding:20px;
+}
